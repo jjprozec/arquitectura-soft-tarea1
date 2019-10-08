@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @curso.sigla %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @curso.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @curso.body %>
+</p>
+
+<p>
+  <%- if current_student %>
+    <strong>Student Enrolled:</strong>
+
+    <%= current_student.email%>
+<%elseif current_professor%>
+
+<strong>Professor Enrolled:</strong>
+  <%= current_professor.email %>
+<%end%>
+</p>
+
+<%= link_to 'Edit', edit_curso_path(@curso) %> |
+<%= link_to 'Back', cursos_path %>

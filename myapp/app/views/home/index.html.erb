@@ -1,0 +1,20 @@
+<%- if student_signed_in? %>
+
+  <h1>Bienvenido <%= current_student.email.split('@')[0].capitalize%> </h1>
+    <h4><%= link_to "Mis Cursos", cursos_path %></h4>
+
+<%elsif professor_signed_in?%>
+  <h1>Bienvenido <%= current_professor.email.split('@')[0].capitalize%> </h1>
+  <h5><%= link_to "Mis Cursos", cursos_path %></h5>
+  <h5><%= link_to "Mis Valoraciones", ratings_path %></h5>
+
+
+  <h3> 
+<%else%>
+    <h1>Bienvenido a UNAB Virtual </h1>
+
+    <h5><%= link_to "Ingresar como Alumno", new_student_session_path%></h5>
+    <h5><%= link_to "Ingresar como Profesor", new_professor_session_path%></h5>
+
+<%end%>    
+

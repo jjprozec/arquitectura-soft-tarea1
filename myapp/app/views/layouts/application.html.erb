@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <ul class="nav justify-content-center">
+      <%- if student_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Salir ', destroy_student_session_path, method: :delete %>
+        </li>
+
+      <%elsif professor_signed_in? %>
+
+        <li class="nav-item">
+          <%= link_to ' Salir ', destroy_professor_session_path, method: :delete %>
+        </li>
+      <%end%>
+
+
+      
+    </ul>
+
+  <div class="container">
+  <p class="notice"> <%= notice %></p>
+  <p class="alert"> <%= alert %></p>
+
+
+    <%= yield %>
+  </body>
+</html>
