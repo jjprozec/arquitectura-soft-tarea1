@@ -1,14 +1,22 @@
-Cuenta alumno:
-usuario: alumno1@unab.cl
-pass: alumno123
+# Alumnos
+- Jorge Jiménez
+- Gustavo Muñoz
+- Laryan Guaico
 
-Cuenta profesor:
-usuario: profesor1@unab.cl
-pass: profesor123
+# Heroku
 
-# Pasos
-borrar informacion del archivo Gemfile.lock.
-Luego ejecutar:
+# Usuarios
+Alumno:
+- usuario: alumno1@unab.cl
+- contraseña: alumno123
+
+Profesor:
+- usuario: profesor1@unab.cl
+- contraseña: profesor123
+
+# Ejecución
+- Borrar la información del archivo Gemfile.lock
+- Luego ejecutar:
 ```
 sudo docker-compose up --build
 docker-compose run web rake db:create
