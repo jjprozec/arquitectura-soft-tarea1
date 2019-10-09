@@ -1,4 +1,7 @@
+
+
 <h1>Todos los Cursos</h1>
+
 <table>
   <thead>
     <tr>
@@ -17,8 +20,8 @@
         <td><%= curso.body %></td>
         <td><%= link_to 'Show  ', curso %></td>
         <td><%= link_to 'Edit  ', edit_curso_path(curso) %></td>
-        <td><%= link_to 'Comentarios  ', comments_path %></td>
-        <td><%#= link_to 'Destroy  ', curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Comentarios  ', comments_path %></td>
+        <td><%= link_to 'Destroy  ', curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +29,5 @@
 
 <br>
 
-<%= link_to 'New Curso', new_curso_path %>
+<%= link_to 'New Curso  ', new_curso_path %>
+<%= link_to 'Back', root_path %>

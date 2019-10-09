@@ -1,23 +1,24 @@
-# Alumnos
-- Jorge Jiménez
-- Gustavo Muñoz
-- Laryan Guaico
+# README
 
-# Heroku
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# Usuarios
-Alumno:
-- usuario: alumno1@unab.cl
-- contraseña: alumno123
+Things you may want to cover:
 
-Profesor:
-- usuario: profesor1@unab.cl
-- contraseña: profesor123
+* Ruby version
 
-# Ejecución
-- Borrar la información del archivo Gemfile.lock
-- Luego ejecutar:
-```
-sudo docker-compose up --build
-docker-compose run web rake db:create
-```
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

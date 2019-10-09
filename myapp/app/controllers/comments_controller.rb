@@ -27,8 +27,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_student.comments.new(comment_params)
-    @comment.student = current_student
+  
+  @comment = Comment.new(comment_params)
+  
+  #@comment = current_student.comments.new(comment_params)
+  #@comment.student = current_student
     
 
     respond_to do |format|

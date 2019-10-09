@@ -10,6 +10,9 @@ class CursosController < ApplicationController
   # GET /cursos/1
   # GET /cursos/1.json
   def show
+    @curso = Curso.find(params[:id])
+  
+
   end
 
   # GET /cursos/new
@@ -69,6 +72,6 @@ class CursosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def curso_params
-      params.require(:curso).permit(:sigla, :name, :body)
+      params.require(:curso).permit(:sigla, :name, :body, :professor_id)
     end
 end

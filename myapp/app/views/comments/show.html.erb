@@ -12,9 +12,13 @@
 
 <p>
   <strong> User:</strong>
-  <%= @comment.student.email.split('@')[0].capitalize %>
+
+  <% if current_student %>
+    <%= @comment.student.email.split('@')[0].capitalize %>
+  <%end%>
 </p>
 
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
+

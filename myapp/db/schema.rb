@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_223613) do
+ActiveRecord::Schema.define(version: 2019_10_08_233813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_223613) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "student_id", default: 1
+    t.bigint "student_id", null: false
     t.bigint "professor_id"
     t.bigint "curso_id"
     t.index ["curso_id"], name: "index_comments_on_curso_id"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_10_06_223613) do
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "professor_id", null: false
+    t.index ["professor_id"], name: "index_ratings_on_professor_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -78,4 +80,5 @@ ActiveRecord::Schema.define(version: 2019_10_06_223613) do
   add_foreign_key "comments", "students"
   add_foreign_key "cursos", "professors"
   add_foreign_key "cursos", "students"
+  add_foreign_key "ratings", "professors"
 end

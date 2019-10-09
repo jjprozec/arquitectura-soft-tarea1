@@ -10,10 +10,16 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= form.label :"Professor Id" %>
+    <%= form.text_field :professor_id %>
+  </div>
 
   <div class="field">
     <%= form.label :valoration %>
-    <%= form.number_field :valoration %>
+    <%#= form.number_field :valoration %>
+    <%= form.select(:valoration, Rating::VALORATION_LIST) %>
   </div>
 
   <div class="field">

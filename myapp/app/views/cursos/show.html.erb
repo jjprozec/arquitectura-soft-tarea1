@@ -17,15 +17,21 @@
 
 <p>
   <%- if current_student %>
-    <strong>Student Enrolled:</strong>
-
+   <strong>Student Enrolled:</strong>
     <%= current_student.email%>
-<%elseif current_professor%>
+  <%end%>  
+  <br>
+  <strong>Professor Enrolled:</strong>
 
-<strong>Professor Enrolled:</strong>
-  <%= current_professor.email %>
-<%end%>
+    profe<%= @curso.professor_id%>
+
+  <% if current_student %>
+  <%= link_to 'Valorar Profesor', ratings_path %>
+  <%end%>
 </p>
-
+<br>
+<h5><%= link_to 'Comentarios del Curso', comments_path %></h5>
+<br>
 <%= link_to 'Edit', edit_curso_path(@curso) %> |
 <%= link_to 'Back', cursos_path %>
+
